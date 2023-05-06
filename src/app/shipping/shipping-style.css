@@ -1,0 +1,21 @@
+:host {
+  padding: 10px;
+  margin: 10px;
+}
+:host label {
+  padding: 10px;
+  margin: 5px;
+}
+:host input {
+  margin: 5px 0px;
+}
+:host button-purches {
+  margin: 10px;
+}
+:host shipping-link {
+  padding: 10px;
+  color: #cb65bb;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=shipping-style.css.map */

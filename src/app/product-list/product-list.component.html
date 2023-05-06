@@ -1,0 +1,57 @@
+
+<!--<h2 routerLink="product-list"> Products</h2>-->
+<h2 > Products</h2>
+<div class="products"
+*ngFor = "let product of products;">
+
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  <p *ngIf="product.year">
+    Description: {{ product.year }}
+  </p>
+  <p>Price: {{product.price}}</p>
+
+  <button type="button" (click)="share()">
+    Buy
+  </button>
+
+  <app-product-alerts
+    [product]="product"
+    (notify) = "onNotify()">
+  </app-product-alerts>
+
+
+</div>
+
+<!--attempts to create accordion-->
+
+<!--<div class="accordion">-->
+<!--  <div class="accordion-item" *ngFor="let item of item">-->
+<!--    <div class="accordion-item-header" (click)="toggleItem(item)">-->
+<!--      {{ item.header }}-->
+<!--    </div>-->
+<!--    <div class="accordion-item-body" [hidden]="!item.expanded">-->
+<!--      {{ item.content }}-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<c-accordion *ngFor = "let products of products">-->
+<!--  <c-accordion-item #item0 ="cAccordionItem" [visible]="false">-->
+<!--    <ng-template cTemplateId="accordionHeaderTemplate">-->
+<!--      <button (click)="item0.toggleItem()" [collapsed]="!item0.visible" cAccordionButton>-->
+<!--        <h3> {{products.name}}</h3>-->
+<!--      </button>-->
+<!--    </ng-template>-->
+
+
+

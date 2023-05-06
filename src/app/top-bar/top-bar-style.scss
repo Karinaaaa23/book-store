@@ -1,0 +1,49 @@
+$primary-top: #cb65bb;
+$full-size: 100%;
+$primary-color: white;
+$rounded-corners: false;
+
+:host {
+  height: 70px;
+  background-color: $primary-top;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  p{
+    color: white;
+    letter-spacing: 5px;
+  }
+
+
+  .fancy-button{
+  border: 1px solid black;
+  border-radius: if($rounded-corners, 3px, null);
+  background-color: white;
+  margin-left: 20%;
+  padding: 3px;
+  color: black;
+
+  i {
+    color: #da0593;
+    padding-right: 4px;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none ;
+    opacity: 0.8;
+  }
+
+  &:hover{
+    opacity: 0.6;
+    font-weight: normal;
+    font-size: 15px;
+  }
+ }
+}
+
+
+

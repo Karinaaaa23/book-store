@@ -1,0 +1,61 @@
+$fonts: 'Roboto', Arial, sans-serif;
+$main-text-color: black;
+$primary-color: white;
+$button-color: #cb65bb;
+
+:host{
+  @mixin indents ($margin, $padding:10px){
+    margin: $margin;
+    padding: $padding;
+  }
+  body{
+    @include indents(0);
+    color: $main-text-color;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @mixin button{
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+
+    &:hover{
+      opacity: 0.6;
+      font-weight: normal;
+    }
+
+    &:disabled{
+      opacity: 0.5;
+      cursor: auto;
+      font-weight: normal;
+    }
+  }
+
+  a{
+    display: block;
+    color: $main-text-color;
+    text-decoration:none;
+
+    &:hover {
+    opacity: 0.8;
+  }}
+
+  h1, h2 {
+    margin: 10px;
+    margin-block-end: 0;
+    color: $primary-color;
+
+    + p {
+      letter-spacing: 2px;
+      text-align: left;
+    }
+  }
+
+}
