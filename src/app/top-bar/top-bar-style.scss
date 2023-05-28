@@ -12,38 +12,35 @@ $rounded-corners: false;
   align-items: center;
   padding: 0 20px;
 
-  p{
+  p {
     color: white;
     letter-spacing: 5px;
   }
 
+  .fancy-button {
+    // border: 1px solid black;
+    border-radius: if($rounded-corners, 3px, null);
+    background-color: white;
+    text-align: center;
+    margin-left: 20%;
+    color: black;
+    float: right;
 
-  .fancy-button{
-  border: 1px solid black;
-  border-radius: if($rounded-corners, 3px, null);
-  background-color: white;
-  margin-left: 20%;
-  padding: 3px;
-  color: black;
+    i {
+      color: #da0593;
+      padding-right: 4px;
+    }
 
-  i {
-    color: #da0593;
-    padding-right: 4px;
+    // a {
+    //   color: $primary-color;
+    //   text-decoration: none ;
+    //   opacity: 0.8;
+    // }
+
+    &:hover {
+      opacity: 0.6;
+      font-weight: normal;
+      font-size: 15px;
+    }
   }
-
-  a {
-    color: $primary-color;
-    text-decoration: none ;
-    opacity: 0.8;
-  }
-
-  &:hover{
-    opacity: 0.6;
-    font-weight: normal;
-    font-size: 15px;
-  }
- }
 }
-
-
-

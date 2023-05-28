@@ -29,7 +29,7 @@ export class ProductDetailsComponent implements OnInit {
     const productIdFromRoute = Number(routeParams.get('productId'))
 
     this.product = products.find(product => product.id === productIdFromRoute)
-    //this.route.data.subscribe(data=> {const productDetails: Product_details = data['Product_details']});
+    this.route.data.subscribe(data=> {const productDetails: Product_details = data['Product_details']});
   }
 }
 

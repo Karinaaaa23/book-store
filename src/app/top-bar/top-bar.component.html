@@ -1,6 +1,22 @@
 <a [routerLink]="['/']">
   <h1>OKAY</h1>
-  <p>BRAND</p>
 </a>
-<a routerLink="/cart" class="button fancy-button">
-  <i class="material-icons">shopping_cart</i>Checkout</a>
+
+<!-- <button mat-button (click)="(sidenav)" #sidenav>
+  
+</button> -->
+
+<button
+  data-drawer-target="sidebar"
+  data-drawer-toggle="sidebar"
+  aria-controls="sidebar"
+  type="button"
+  class="fancy-button"
+>
+  <span class="sr-only" routerLink="/cart">
+    <i class="material-icons">shopping_cart</i>Cart</span
+  >
+</button>
+
+<!-- <a routerLink="/cart" class="button fancy-button">
+  <i class="material-icons">shopping_cart</i> Cart </a> -->

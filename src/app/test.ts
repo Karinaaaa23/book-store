@@ -14,6 +14,7 @@ const routes: Routes = [
 
   {
     path: 'product-list',
+    // component: ProductListComponent
     loadChildren: () => import('./product-list/product-list.module').then(m => m.ProductListModule),
   },
 
@@ -43,7 +44,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
+
   exports: [RouterModule]
 })
 export class AppRoutingModule {
+  
 }

@@ -1,9 +1,13 @@
-<!--<button type="button" routerLink="/product-details">-->
+
 <h2>Product details</h2>
 <div *ngIf="product">
   <h4>{{product!.name}}</h4>
-  <p>{{product!.price | currency}}</p>
-  <p>{{product!.description}}</p>
-  <button type="button" (click)="addToCart(product!)">Buy</button>
+  <p>Author: {{product.author}}</p>
+  <p>Year: {{product.year}}</p>
+  <p>Price: {{product!.price | currency}}</p>
+  <p>Description: {{product!.description}}</p>
 </div>
-<!--</button>-->
+
+<button type="button" routerLink="/Product">
+<button type="button" (click)="addToCart(product!)">Add to cart</button></button>
+<!-- <button type="button" (click)="addToCart(product!)" [routerLink]="['/Product']">Add to cart</button> -->

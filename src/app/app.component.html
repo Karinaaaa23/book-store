@@ -1,6 +1,22 @@
 <app-top-bar></app-top-bar>
-
-<!--<button type="button" routerLink="/product-details"></button>-->
-<!--<div class="container">-->
-  <router-outlet></router-outlet>
-<!--</div>-->
+<mat-sidenav-container class="cart-service-container">
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  <mat-sidenav
+    #sidenav
+    mode="over"
+    [opened]="opened"
+    position="end"
+    (closed)="(close)"
+  >
+    <!-- <button
+      mat-button
+      (click)="sidenav.toggle()"
+      routerLink="/cart"
+      class="button fancy-button"
+    >
+      <i class="material-icons">shopping_cart</i> Cart
+    </button> -->
+  </mat-sidenav>
+</mat-sidenav-container>

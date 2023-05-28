@@ -1,36 +1,92 @@
 
-<!--<h2 routerLink="product-list"> Products</h2>-->
+<!-- <h2 routerLink="product-list"> Products</h2> -->
 <h2 > Products</h2>
-<div class="products"
-*ngFor = "let product of products;">
+<section class="main-list">
+  <div class="product-dynamic-list">
+    <div class="listign" style="grid-colums: repet (3, 1fr)"> 
+        <div class="card-layout" style="height:322px;">
+          <div class="products"
+          *ngFor = "let product of products;">
+          <div class="category-card-image">
+            <div class="product-image">
+              <img [src]="product.images">
+            </div>
+          </div>
 
-  <h3>
-    <a
-      [title]="product.name + ' details'"
-      [routerLink]="['/products', product.id]">
-      {{ product.name }}
-    </a>
-  </h3>
+          <div class="category-card-wraeper">
+            <h3>
+              <a
+                [title]="product.name + ' details'"
+                [routerLink]="['/products', product.id]">
+                {{ product.name }}
+              </a>
+            </h3>
 
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
-  </p>
-  <p *ngIf="product.year">
-    Description: {{ product.year }}
-  </p>
-  <p>Price: {{product.price}}</p>
+            <div class="category-card-content">
+              <p>Author: {{product.author}}</p>
+            </div>
 
-  <button type="button" (click)="share()">
-    Buy
-  </button>
+            <div class="category-card-price">
+              <p>Price: {{product.price}}</p>
+            </div>
 
-  <app-product-alerts
-    [product]="product"
-    (notify) = "onNotify()">
-  </app-product-alerts>
+          </div>          
+          <button type="button" (click)="share()" [routerLink]="['/Product']">
+            Buy
+          </button>
+        </div>
+    </div>
+    </div>
+  </div>
+
+<!-- <app-product-alerts
+  [product]="product"
+  (notify) = "onNotify()">
+</app-product-alerts>
+  -->
+</section>
 
 
-</div>
+<!-- <div fxLayout>
+  <div class = "sub-section-1">
+    <h3>
+      <a
+        [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]">
+        {{ product.name }}
+      </a>
+    </h3>
+    <p *ngIf="product.description">
+      Description: {{ product.description }}
+    </p>
+
+    <p *ngIf="product.year">
+      Year: {{ product.year }}
+    </p>
+    <p>Price: {{product.price}}</p>
+  
+    <p *ngIf="product.format">
+      Format: {{ product.format }}
+    </p>
+  
+  </div >
+
+<div class = "sub-section-2">
+  <img src="./assets/img/1.jpg" alt="image">
+</div >
+
+<button type="button" (click)="share()" [routerLink]="['/Product']">
+  Buy
+</button>
+
+<app-product-alerts
+  [product]="product"
+  (notify) = "onNotify()">
+</app-product-alerts>
+</div> -->
+
+
+
 
 <!--attempts to create accordion-->
 

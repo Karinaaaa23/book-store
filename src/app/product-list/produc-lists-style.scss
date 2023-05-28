@@ -1,0 +1,30 @@
+$full-size: 100%;
+
+:host {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px;
+  margin: 20px;
+
+  .listign {
+    display: grid;
+    grid-gap: 5px;
+  }
+  .card-layout {
+    margin: 10px;
+    height: 350px;
+    position: relative;
+    display: grid;
+    grid-gap: 5px;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .product-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+}

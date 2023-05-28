@@ -4,7 +4,7 @@ $primary-color: white;
 $button-color: #cb65bb;
 
 :host{
-  @mixin indents ($margin, $padding:10px){
+  @mixin indents ($margin, $padding:0){
     margin: $margin;
     padding: $padding;
   }
@@ -14,6 +14,7 @@ $button-color: #cb65bb;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
   }
 
   @mixin button{
@@ -21,6 +22,7 @@ $button-color: #cb65bb;
     display: flex;
     align-items: center;
     padding: 8px 16px;
+    height: 15px;
     border-radius: 2px;
     font-size: 14px;
     cursor: pointer;
@@ -38,6 +40,10 @@ $button-color: #cb65bb;
     }
   }
 
+  @mixin image ($img){
+    position: relative;
+    float: right;
+  }
   a{
     display: block;
     color: $main-text-color;
@@ -57,5 +63,6 @@ $button-color: #cb65bb;
       text-align: left;
     }
   }
+ 
 
 }
