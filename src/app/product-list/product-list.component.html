@@ -1,51 +1,46 @@
-
 <!-- <h2 routerLink="product-list"> Products</h2> -->
-<h2 > Products</h2>
+<h2>Products</h2>
 <section class="main-list">
   <div class="product-dynamic-list">
-    <div class="listign" style="grid-colums: repet (3, 1fr)"> 
-        <div class="card-layout" style="height:322px;">
-          <div class="products"
-          *ngFor = "let product of products;">
-          <div class="category-card-image">
-            <div class="product-image">
-              <img [src]="product.images">
-            </div>
+    <div class="listign">
+      <div class="card-layout" style="height: 322px">
+        <div class="products" *ngFor="let product of products">
+          <div class="product-image">
+            <img [src]="product.images" />
           </div>
 
           <div class="category-card-wraeper">
             <h3>
               <a
                 [title]="product.name + ' details'"
-                [routerLink]="['/products', product.id]">
+                [routerLink]="['/products', product.id]"
+              >
                 {{ product.name }}
               </a>
             </h3>
 
             <div class="category-card-content">
-              <p>Author: {{product.author}}</p>
+              <p>Author: {{ product.author }}</p>
             </div>
 
             <div class="category-card-price">
-              <p>Price: {{product.price}}</p>
+              <p>Price: {{ product.price }}</p>
             </div>
-
-          </div>          
-          <button type="button" (click)="share()" [routerLink]="['/Product']">
-            Buy
-          </button>
+            <button type="button" (click)="share()" [routerLink]="['/Product']">
+              Buy
+            </button>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
   </div>
 
-<!-- <app-product-alerts
+  <!-- <app-product-alerts
   [product]="product"
   (notify) = "onNotify()">
 </app-product-alerts>
   -->
 </section>
-
 
 <!-- <div fxLayout>
   <div class = "sub-section-1">
@@ -85,9 +80,6 @@
 </app-product-alerts>
 </div> -->
 
-
-
-
 <!--attempts to create accordion-->
 
 <!--<div class="accordion">-->
@@ -108,6 +100,3 @@
 <!--        <h3> {{products.name}}</h3>-->
 <!--      </button>-->
 <!--    </ng-template>-->
-
-
-

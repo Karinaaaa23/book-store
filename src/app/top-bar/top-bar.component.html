@@ -6,9 +6,10 @@
   
 </button> -->
 
-<button
-  data-drawer-target="sidebar"
+<!-- <button
+  data-drawer-target="#sidenav"
   data-drawer-toggle="sidebar"
+  mode="over"
   aria-controls="sidebar"
   type="button"
   class="fancy-button"
@@ -16,7 +17,29 @@
   <span class="sr-only" routerLink="/cart">
     <i class="material-icons">shopping_cart</i>Cart</span
   >
-</button>
+</button> -->
 
-<!-- <a routerLink="/cart" class="button fancy-button">
-  <i class="material-icons">shopping_cart</i> Cart </a> -->
+<!-- <div *ngFor="let button of button">
+  <button
+    mat-button
+    (click)="toggleButton(button)"
+    data-drawer-target="#sidenav"
+    data-drawer-toggle="sidebar"
+  >
+    <span class="sr-only" routerLink="/cart">
+      <i class="material-icons">shopping_cart</i>{{ button.cartButton }}</span
+    >
+  </button>
+  <mat-button-toggle @expandCollapse *ngIf="button.isOpen"> </mat-button-toggle>
+</div> -->
+<section>
+  <button
+    mat-raised-button
+    #sidenav
+    (click)="(openSidenavWithDelay)"
+    routerLink="/cart"
+    class="button fancy-button"
+  >
+    <i class="material-icons">shopping_cart</i> Cart
+  </button>
+</section>

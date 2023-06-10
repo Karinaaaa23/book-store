@@ -1,22 +1,14 @@
 <app-top-bar></app-top-bar>
-<mat-sidenav-container class="cart-service-container">
+<mat-sidenav-container class="cart-service-container" autosize>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
   <mat-sidenav
     #sidenav
-    mode="over"
+    mode="push"
     [opened]="opened"
+    (opened)="events.push('open!')"
     position="end"
-    (closed)="(close)"
   >
-    <!-- <button
-      mat-button
-      (click)="sidenav.toggle()"
-      routerLink="/cart"
-      class="button fancy-button"
-    >
-      <i class="material-icons">shopping_cart</i> Cart
-    </button> -->
   </mat-sidenav>
 </mat-sidenav-container>

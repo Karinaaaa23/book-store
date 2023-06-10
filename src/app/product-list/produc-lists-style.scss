@@ -3,28 +3,31 @@ $full-size: 100%;
 :host {
   box-sizing: border-box;
   display: block;
-  padding: 10px;
   margin: 20px;
+  height: $full-size;
 
   .listign {
     display: grid;
     grid-gap: 5px;
   }
   .card-layout {
-    margin: 10px;
-    height: 350px;
+    height: 400px;
     position: relative;
     display: grid;
     grid-gap: 5px;
+    margin: 10px;
     box-sizing: border-box;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .product-image {
+  img {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     overflow: hidden;
+  }
+  .category-card-wraeper {
+    margin: 100px 0;
   }
 }
