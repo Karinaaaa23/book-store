@@ -24,10 +24,15 @@ $bg-color: #fff;
   }
 
   .mat-sidenav-container {
-    // width: 80%;
-    // display: flex;
+    width: 80%;
+    display: flex;
     position: fixed;
     justify-content: space-between;
     z-index: 9999 !important;
+  }
+
+  .mat-drawer-inner-container {
+    width: 100%;
+    background-color: red;
   }
 }

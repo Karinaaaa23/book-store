@@ -8,14 +8,10 @@ import { products } from "../products";
 })
 export class ProductListComponent {
   products = products;
-  share() {
-    window.alert("the book has been added to card!");
-  }
 
   onNotify() {
     window.alert(
       "You will be notified when the product goes on sale and you can buy it"
     );
   }
-  // expandedIndex = 0;
 }

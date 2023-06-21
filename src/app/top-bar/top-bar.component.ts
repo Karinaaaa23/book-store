@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from "@angular/animations";
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { MatDrawerMode, MatSidenav } from "@angular/material/sidenav";
 
 @Component({
@@ -9,7 +9,13 @@ import { MatDrawerMode, MatSidenav } from "@angular/material/sidenav";
 })
 export class TopBarComponent {
   @ViewChild("sidenav") sidenav!: MatSidenav;
-  openSidenavWithDelay(): void {
-    this.sidenav.open();
+  // openSidenavWithDelay(): void {
+  //   this.sidenav.open();
+  // }
+
+  // opened = false;
+
+  toggleSidenav() {
+    this.sidenav.toggle();
   }
 }

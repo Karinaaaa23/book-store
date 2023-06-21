@@ -1,14 +1,8 @@
 <app-top-bar></app-top-bar>
-<mat-sidenav-container class="cart-service-container" autosize>
+<mat-sidenav-container class="cart-service-container">
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-  <mat-sidenav
-    #sidenav
-    mode="push"
-    [opened]="opened"
-    (opened)="events.push('open!')"
-    position="end"
-  >
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" position="end">
   </mat-sidenav>
 </mat-sidenav-container>

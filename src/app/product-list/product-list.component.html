@@ -26,8 +26,8 @@
             <div class="category-card-price">
               <p>Price: {{ product.price }}</p>
             </div>
-            <button type="button" (click)="share()" [routerLink]="['/Product']">
-              Buy
+            <button type="button" [routerLink]="['/products', product.id]">
+              Details
             </button>
           </div>
         </div>

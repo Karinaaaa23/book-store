@@ -36,9 +36,9 @@
   <button
     mat-raised-button
     #sidenav
-    (click)="(openSidenavWithDelay)"
     routerLink="/cart"
     class="button fancy-button"
+    (click)="toggleSidenav()"
   >
     <i class="material-icons">shopping_cart</i> Cart
   </button>

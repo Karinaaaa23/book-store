@@ -1,13 +1,20 @@
+<main>
+  <h2>Product details</h2>
+  <div *ngIf="product">
+    <h4>{{ product.name }}</h4>
+    <div class="product-image">
+      <img [src]="product.images" />
+    </div>
 
-<h2>Product details</h2>
-<div *ngIf="product">
-  <h4>{{product!.name}}</h4>
-  <p>Author: {{product.author}}</p>
-  <p>Year: {{product.year}}</p>
-  <p>Price: {{product!.price | currency}}</p>
-  <p>Description: {{product!.description}}</p>
-</div>
+    <p>Author: {{ product.author }}</p>
+    <p>Year: {{ product.year }}</p>
+    <p>Price: {{ product!.price | currency }}</p>
+    <p>Description: {{ product!.description }}</p>
+  </div>
 
-<button type="button" routerLink="/Product">
-<button type="button" (click)="addToCart(product!)">Add to cart</button></button>
+  <button type="button" routerLink="/Product">
+    <button type="button" (click)="addToCart(product!)">Add to cart</button>
+  </button>
+</main>
+
 <!-- <button type="button" (click)="addToCart(product!)" [routerLink]="['/Product']">Add to cart</button> -->

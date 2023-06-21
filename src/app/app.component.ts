@@ -1,9 +1,7 @@
-import { animation, trigger } from "@angular/animations";
+import { animation, state, trigger } from "@angular/animations";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { MatDrawerMode, MatSidenav } from "@angular/material/sidenav";
-import { delay, takeUntil } from "rxjs/operators";
-import { Subject } from "rxjs";
 import { MatSidenavModule } from "@angular/material/sidenav";
 
 @Component({
@@ -33,17 +31,20 @@ export class AppComponent implements OnInit {
   //   this.destroy$.next();
   //   this.destroy$.complete();
   // }
-  @ViewChild("sidenav") sidenav!: MatSidenav;
+  @ViewChild("sidenav", { static: true })
+  sidenav!: MatSidenav;
   ngOnInit(): void {
     setTimeout(() => {
-      this.opened = true;
-      this.close = false;
+      this.opened = false;
+      this.close = true;
     });
   }
-  events: string[] = [];
-  opened = false;
-  close = true;
+  opened = true;
+  close = false;
 
+  toggleSidenav() {
+    this.sidenav.toggle();
+  }
   title(title: any) {
     throw new Error("Method not implemented.");
   }
