@@ -35,10 +35,8 @@
 <section>
   <button
     mat-raised-button
-    #sidenav
-    routerLink="/cart"
     class="button fancy-button"
-    (click)="toggleSidenav()"
+    (click)="cardClick.emit()"
   >
     <i class="material-icons">shopping_cart</i> Cart
   </button>

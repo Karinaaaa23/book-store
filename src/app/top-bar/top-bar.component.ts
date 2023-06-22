@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from "@angular/animations";
-import { Component, ViewChild } from "@angular/core";
+import { Component, EventEmitter, Output, ViewChild } from "@angular/core";
 import { MatDrawerMode, MatSidenav } from "@angular/material/sidenav";
 
 @Component({
@@ -8,6 +8,9 @@ import { MatDrawerMode, MatSidenav } from "@angular/material/sidenav";
   styleUrls: ["./top-bar-style.scss"],
 })
 export class TopBarComponent {
+  @Output()
+  cardClick = new EventEmitter();
+
   @ViewChild("sidenav") sidenav!: MatSidenav;
   // openSidenavWithDelay(): void {
   //   this.sidenav.open();

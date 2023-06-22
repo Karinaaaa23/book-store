@@ -34,17 +34,19 @@ export class AppComponent implements OnInit {
   @ViewChild("sidenav", { static: true })
   sidenav!: MatSidenav;
   ngOnInit(): void {
-    setTimeout(() => {
-      this.opened = false;
-      this.close = true;
-    });
+    // setTimeout(() => {
+    //   this.opened = false;
+    //   this.close = true;
+    // });
   }
-  opened = true;
-  close = false;
+  opened = false;
+  //close = false;
 
+  console = console;
   toggleSidenav() {
     this.sidenav.toggle();
   }
+
   title(title: any) {
     throw new Error("Method not implemented.");
   }
