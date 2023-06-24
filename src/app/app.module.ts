@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { TopBarComponent } from "./top-bar/top-bar.component";
 import { CartModule } from "./cart-service/cart-service.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
-import { CartComponent } from "./cart-service/cart-service.components";
+import { CartComponent } from "./cart-service/cart.component";
 
 @NgModule({
   declarations: [

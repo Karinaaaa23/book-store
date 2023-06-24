@@ -1,8 +1,8 @@
-import {NgModule,CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
-import {CartComponent} from "./cart-service.components";
-import {CartRoutingModule} from "./cart-service.routing.module";
-import {CommonModule} from "@angular/common";
-import {ReactiveFormsModule} from "@angular/forms";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { CartComponent } from "./cart.component";
+import { CartRoutingModule } from "./cart.module";
+import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
 import { MaterialModule } from "../material.module";
 
 @NgModule({
@@ -12,8 +12,8 @@ import { MaterialModule } from "../material.module";
     ReactiveFormsModule,
     MaterialModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
-  declarations: [CartComponent]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  declarations: [CartComponent],
+  exports: [CartComponent],
 })
-
-export class CartModule{}
+export class CartModule {}

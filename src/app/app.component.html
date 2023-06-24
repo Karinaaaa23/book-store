@@ -1,8 +1,8 @@
 <app-top-bar (cardClick)="sidenav.toggle()"></app-top-bar>
 <mat-sidenav-container class="cart-service-container">
-  <mat-sidenav #sidenav mode="over" [opened]="opened" position="end"
-    >sdfgsdfgsdfgsdfg</mat-sidenav
-  >
+  <mat-sidenav #sidenav mode="over" [opened]="opened" position="end">
+    <app-cart></app-cart>
+  </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

@@ -2,7 +2,7 @@
   <h2>Product details</h2>
   <div *ngIf="product">
     <h4>{{ product.name }}</h4>
-    <div class="product-image">
+    <div *ngIf="product" class="product-image">
       <img [src]="product.images" />
     </div>
 
@@ -12,8 +12,8 @@
     <p>Description: {{ product!.description }}</p>
   </div>
 
-  <button type="button" routerLink="/Product">
-    <button type="button" (click)="addToCart(product!)">Add to cart</button>
+  <button type="button" (click)="addToCart(product!)" routerLink="/cart">
+    Add to cart
   </button>
 </main>
 

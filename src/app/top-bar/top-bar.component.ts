@@ -12,12 +12,6 @@ export class TopBarComponent {
   cardClick = new EventEmitter();
 
   @ViewChild("sidenav") sidenav!: MatSidenav;
-  // openSidenavWithDelay(): void {
-  //   this.sidenav.open();
-  // }
-
-  // opened = false;
-
   toggleSidenav() {
     this.sidenav.toggle();
   }

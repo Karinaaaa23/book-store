@@ -3,6 +3,8 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { MatDrawerMode, MatSidenav } from "@angular/material/sidenav";
 import { MatSidenavModule } from "@angular/material/sidenav";
+import { Product } from "./products";
+import { CartService } from "./cart-service/cart.service";
 
 @Component({
   selector: "app-root",
@@ -10,44 +12,25 @@ import { MatSidenavModule } from "@angular/material/sidenav";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-  // isButtonEnabled = false;
-  // private buttonDelaySubject = new Subject<void>();
-  // destroy$: Subject<void> = new Subject<void>();
-
-  // onClick() {
-  //   this.isButtonEnabled = true;
-  //   this.buttonDelaySubject.next();
-  // }
-
-  // ngOnInit() {
-  //   this.buttonDelaySubject
-  //     .pipe(delay(2000), takeUntil(this.destroy$))
-  //     .subscribe(() => {
-  //       this.isButtonEnabled = true;
-  //     });
-  // }
-
-  // ngOnDestroy() {
-  //   this.destroy$.next();
-  //   this.destroy$.complete();
-  // }
   @ViewChild("sidenav", { static: true })
   sidenav!: MatSidenav;
-  ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.opened = false;
-    //   this.close = true;
-    // });
-  }
-  opened = false;
-  //close = false;
+  // items: ;
 
-  console = console;
+  // cartState$ = this.cartService.state$;
+
+  opened = false;
+
+  constructor(private cartService: CartService) {}
+  ngOnInit(): void {}
+
   toggleSidenav() {
     this.sidenav.toggle();
   }
-
   title(title: any) {
     throw new Error("Method not implemented.");
+  }
+
+  onNotify() {
+    window.alert("You haven't chosen anything yet");
   }
 }

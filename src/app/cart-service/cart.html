@@ -1,0 +1,36 @@
+<main>
+  <div class="title-header">
+    <h3>Your purchases</h3>
+  </div>
+  <app-shipping></app-shipping>
+
+  <!-- <div class="content" *ngIf="product">
+    <div class="product-image">
+      <img [src]="product.images" />
+    </div>
+  </div> -->
+  <!-- <div class="cart-item" *ngFor="let item of items |async">
+    <span>{{item.name}}</span>
+    <span>{{item.price | currency}}</span> -->
+  <!-- <span>{{item.images}}</span> -->
+  <!-- <a routerLink="/shipping" class="shipping-link">Shipping Prices</a> -->
+
+  <div class="shipping-item" *ngFor="let shipping of items$ | async">
+    <span>{{ shipping.name }}</span>
+    <span>{{ shipping.price }}</span>
+    <img [src]="shipping.images" alt="Product image" />
+    <!-- <span>{{  }}</span> -->
+    <!-- <div class="shipping-details" *ngIf-="let products of product">
+      <p>{{ product.name }}</p>
+    </div> -->
+  </div>
+  <button
+    class="button-purches"
+    mat-raised-button
+    type="submit"
+    routerLink="/shipping"
+  >
+    Order
+  </button>
+  <!-- </div> -->
+</main>
