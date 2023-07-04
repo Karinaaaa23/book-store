@@ -1,29 +1,33 @@
 <main>
-  <div class="title-header">
+  <div class="title-shipping">
     <h3>Your purchases</h3>
   </div>
   <app-shipping></app-shipping>
 
-  <!-- <div class="content" *ngIf="product">
-    <div class="product-image">
-      <img [src]="product.images" />
-    </div>
-  </div> -->
-  <!-- <div class="cart-item" *ngFor="let item of items |async">
-    <span>{{item.name}}</span>
-    <span>{{item.price | currency}}</span> -->
-  <!-- <span>{{item.images}}</span> -->
-  <!-- <a routerLink="/shipping" class="shipping-link">Shipping Prices</a> -->
+  <div class="shipping-item" *ngFor="let shipping of items$ |async ">
+    <div class="shipping-form-content">
+      <aside id="aside">
+        <div class="product-image">
+          <img [src]="shipping.images" alt="Product image" />
+        </div>
+      </aside>
 
-  <div class="shipping-item" *ngFor="let shipping of items$ | async">
-    <span>{{ shipping.name }}</span>
-    <span>{{ shipping.price }}</span>
-    <img [src]="shipping.images" alt="Product image" />
-    <!-- <span>{{  }}</span> -->
-    <!-- <div class="shipping-details" *ngIf-="let products of product">
-      <p>{{ product.name }}</p>
-    </div> -->
+      <section id="section">
+        <div class="product-wrapper">
+          <div class="product-container">
+            <div class="product-details">
+              <h4 class="book-name">{{ shipping.name }}</h4>
+              <div class="book-price">{{ shipping.price }}</div>
+            </div>
+            <div class="product-actions">
+              <button class="product-remove">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
+
   <button
     class="button-purches"
     mat-raised-button
@@ -32,5 +36,4 @@
   >
     Order
   </button>
-  <!-- </div> -->
 </main>

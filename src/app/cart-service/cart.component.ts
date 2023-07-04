@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   items$ = new BehaviorSubject(products);
 
   clearItems = this.cartService.clearCart();
+  shipping: any;
 
   constructor(
     private route: ActivatedRoute,

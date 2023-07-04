@@ -54,9 +54,3 @@ button:hover {
   color: #cb65bb;
   font-weight: bold;
 }
-
-img {
-  height: 100px;
-  align-items: right;
-  flex-grow: 2;
-}

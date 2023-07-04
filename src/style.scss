@@ -2,68 +2,67 @@ $fonts: "Roboto", Arial, sans-serif;
 $main-text-color: black;
 $primary-color: white;
 $button-color: #cb65bb;
+@mixin indents($margin, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
+  height: 100%;
+}
 
-:host {
-  @mixin indents($margin, $padding: 0) {
-    margin: $margin;
-    padding: $padding;
-    height: 100%;
-  }
-  body {
-    @include indents(0);
-    color: $main-text-color;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-  }
+body {
+  @include indents(0);
+  color: $main-text-color;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
 
-  @mixin button {
-    color: $primary-color;
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    height: 15px;
-    border-radius: 2px;
-    font-size: 14px;
-    cursor: pointer;
-    border: none;
+@mixin button {
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  height: 15px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
 
-    &:hover {
-      opacity: 0.6;
-      font-weight: normal;
-    }
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: auto;
-      font-weight: normal;
-    }
+  &:hover {
+    opacity: 0.6;
+    font-weight: normal;
   }
 
-  @mixin image($img) {
-    position: relative;
-    float: right;
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
+    font-weight: normal;
   }
-  a {
-    display: block;
-    color: $main-text-color;
-    text-decoration: none;
+}
 
-    &:hover {
-      opacity: 0.8;
-    }
+@mixin image($img) {
+  position: relative;
+  width: 40px;
+  height: 60px;
+}
+a {
+  display: block;
+  color: $main-text-color;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
   }
+}
 
-  h1,
-  h2 {
-    margin: 10px;
-    margin-block-end: 0;
-    color: $primary-color;
+h1,
+h2 {
+  margin: 10px;
+  margin-block-end: 0;
+  color: $primary-color;
 
-    + p {
-      letter-spacing: 2px;
-      text-align: left;
-    }
+  + p {
+    letter-spacing: 2px;
+    text-align: left;
   }
 }

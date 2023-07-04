@@ -1,9 +1,5 @@
-import { animation, state, trigger } from "@angular/animations";
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { MatDrawerMode, MatSidenav } from "@angular/material/sidenav";
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { Product } from "./products";
+import { MatSidenav } from "@angular/material/sidenav";
 import { CartService } from "./cart-service/cart.service";
 
 @Component({
@@ -14,9 +10,6 @@ import { CartService } from "./cart-service/cart.service";
 export class AppComponent implements OnInit {
   @ViewChild("sidenav", { static: true })
   sidenav!: MatSidenav;
-  // items: ;
-
-  // cartState$ = this.cartService.state$;
 
   opened = false;
 

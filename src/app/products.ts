@@ -25,7 +25,8 @@ export const products = [
     id: 2,
     name: "Elementary English ",
     author: "Oxford University Press",
-    images: "https://list-english.ru/video/img/2012-1.png",
+    images:
+      "https://lbc.net.ua/image/cache/catalog/pidruchniki/english-file-4/pidruchnyk-english-file-fourth-edition-elementary-students-book-with-online-practice-9780194031592-430x600.jpg",
     price: 70,
     description: "For A2 level English",
     year: 2012,
@@ -57,7 +58,8 @@ export const products = [
     id: 5,
     name: "Elementary English ",
     author: "Oxford University Press",
-    images: "https://list-english.ru/video/img/2012-1.png",
+    images:
+      "https://lbc.net.ua/image/cache/catalog/pidruchniki/english-file-4/pidruchnyk-english-file-fourth-edition-elementary-students-book-with-online-practice-9780194031592-430x600.jpg",
     price: 120,
     description: "For A2 level English",
     year: 2012,
