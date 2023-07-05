@@ -21,6 +21,10 @@ export class CartService {
     return this.items;
   }
 
+  // removeItems(): Observable<Product[]>{
+  //   this.items.subscribe(data => {i});
+  // }
+
   clearCart(): void {
     this.items.next([]);
   }
