@@ -1,11 +1,5 @@
-import { Component, Inject, Input } from "@angular/core";
-import { BehaviorSubject, Observable, Subject } from "rxjs";
-import {
-  MatDialog,
-  MAT_DIALOG_DATA,
-  MatDialogModule,
-  MatDialogRef,
-} from "@angular/material/dialog";
+import { Component, Input } from "@angular/core";
+import { Observable, Subject } from "rxjs";
 import { CartService } from "../cart-service/cart.service";
 import { Product, products } from "../products";
 
@@ -22,7 +16,7 @@ import { Product, products } from "../products";
 export class ShippingComponent {
   items!: Observable<Product[]>;
 
-  shippingCosts!: Observable<{ name: string; price: number }[]>;
+  shippingCosts!: Observable<{ id: number; name: string; price: number }[]>;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {

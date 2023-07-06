@@ -4,11 +4,11 @@
   </div>
   <app-shipping></app-shipping>
 
-  <div class="shipping-item" *ngFor="let shipping of items$ |async ">
+  <div class="shipping-item" *ngFor="let item of items |async ">
     <div class="shipping-form-content">
       <aside id="aside">
         <div class="product-image">
-          <img [src]="shipping.images" alt="Product image" />
+          <img [src]="item.images" alt="Product image" />
         </div>
       </aside>
 
@@ -16,17 +16,15 @@
         <div class="product-wrapper">
           <div class="product-container">
             <div class="product-details">
-              <h4 class="book-name">{{ shipping.name }}</h4>
-              <div class="book-price">
-                Price: {{ shipping.price | currency }}
-              </div>
+              <h4 class="book-name">{{ item.name }}</h4>
+              <div class="book-price">Price: {{ item.price | currency }}</div>
             </div>
             <div class="product-actions">
-              <button class="product-remove">Delete</button>
+              <!-- <button class="product-remove">Delete</button> -->
 
-              <!-- <button class="product-remove" (click)="bookRemove(product.id)">
+              <button class="product-remove" (click)="removeItems(item)">
                 Delete
-              </button> -->
+              </button>
             </div>
           </div>
         </div>

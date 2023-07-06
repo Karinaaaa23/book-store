@@ -1,14 +1,28 @@
 [
   {
+    "id": 1,
     "name": " JavaScript for begginers ",
     "price": 12
   },
+  { "id": 2, "name": " Elementary English ", "price": 70 },
   {
-    "name": " Elementary English ",
-    "price": 70
-  },
-  {
+    "id": 3,
     "name": " User Friendly ",
     "price": 100
+  },
+  {
+    "id": 4,
+    "name": "JavaScript for begginers",
+    "price": 17
+  },
+  {
+    "id": 5,
+    "name": "Elementary English ",
+    "price": 120
+  },
+  {
+    "id": 6,
+    "name": "Managing the Unmanageable",
+    "price": 150
   }
 ]

@@ -1,9 +1,8 @@
-<!-- <h2 routerLink="product-list"> Products</h2> -->
 <h2>Products</h2>
 <section class="main-list">
   <div class="product-dynamic-list">
     <div class="listing">
-      <div class="card-layout" style="height: 322px">
+      <div class="card-layout">
         <div class="products" *ngFor="let product of products">
           <div class="product-content">
             <div class="product-image">
@@ -37,9 +36,6 @@
     </div>
   </div>
 
-  <!-- <app-product-alerts
-  [product]="product"
-  (notify) = "onNotify()">
-</app-product-alerts>
-  -->
+  <!-- <app-product-alerts [product]="Product" (notify)="onNotify()">
+  </app-product-alerts> -->
 </section>

@@ -3,7 +3,7 @@ $full-size: 100%;
 h2 {
   margin: 20px;
 }
-.listign {
+.listing {
   display: grid;
   grid-gap: 5px;
 }
@@ -15,6 +15,7 @@ h2 {
   margin: 10px;
   box-sizing: border-box;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  // pointer-events: none;
 }
 
 img {
@@ -24,7 +25,7 @@ img {
 }
 
 .product-content {
-  z-index: 99998;
+  z-index: 99996;
   height: 300px;
   margin: 10px;
   position: relative;
@@ -34,6 +35,10 @@ img {
   border-bottom-left-radius: 10px;
   transition: all 1s;
   // pointer-events: none;
+  &::before,
+  &::after {
+    pointer-events: none;
+  }
 
   @media (any-hover: hover) {
     &:after,
@@ -73,6 +78,8 @@ img {
   }
 }
 
-button {
-  z-index: 99999;
+.category-card-price {
+  button {
+    z-index: 99999;
+  }
 }
