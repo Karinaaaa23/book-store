@@ -1,7 +1,7 @@
 <main>
   <h2>Product details</h2>
   <div *ngIf="product">
-    <h4>{{ product.name }}</h4>
+    <h4 class="product.title">{{ product.name }}</h4>
     <div *ngIf="product" class="product-image">
       <img [src]="product.images" />
     </div>
@@ -16,5 +16,3 @@
     Add to cart
   </button>
 </main>
-
-<!-- <button type="button" (click)="addToCart(product!)" [routerLink]="['/Product']">Add to cart</button> -->

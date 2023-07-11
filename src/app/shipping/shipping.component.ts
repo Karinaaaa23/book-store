@@ -20,13 +20,8 @@ export class ShippingComponent {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.shippingCosts = this.cartService.getShippingPrices();
+    this.shippingCosts = this.cartService.getShippingItems();
     this.items = this.cartService.getItems();
-    // this.items.subscribe((items: any) => {
-    //   (name: string) => {
-    //     number;
-    //   };
-    // });
   }
 
   completeOrder() {

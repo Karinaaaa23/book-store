@@ -3,15 +3,22 @@ $full-size: 100%;
 :host {
   width: $full-size;
   text-align: left;
-  margin: 20px;
+  // margin: 20px;
   h2 {
     text-align: center;
   }
   main {
     padding: 20px;
   }
+
+  .product.title {
+    font-weight: 700;
+  }
+
   .product-image {
-    float: right;
-    height: 300px;
+    img {
+      float: right;
+      height: 200px;
+    }
   }
 }

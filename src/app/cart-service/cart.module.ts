@@ -2,6 +2,7 @@ import { InjectionToken, NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CartComponent } from "./cart.component";
 import { CartService } from "./cart.service";
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 const routes: Routes = [
   {
@@ -11,6 +12,6 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule, MatPaginatorModule],
 })
 export class CartRoutingModule {}

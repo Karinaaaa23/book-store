@@ -20,7 +20,12 @@
               <div class="book-price">Price: {{ item.price | currency }}</div>
             </div>
             <div class="product-actions">
-              <!-- <button class="product-remove">Delete</button> -->
+              <mat-paginator
+                [pageSize]="200"
+                [pageSizeOptions]="[1, 2, 3, 4, 5, 6, 7, 8, 9...]"
+                aria-label="Qty "
+              >
+              </mat-paginator>
 
               <button class="product-remove" (click)="removeItems(item)">
                 Delete

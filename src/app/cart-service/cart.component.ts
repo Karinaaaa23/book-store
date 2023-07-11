@@ -13,19 +13,20 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class CartComponent implements OnInit {
   product: Product | undefined;
-  items!: Observable<Product[]>; //  = new BehaviorSubject(products);
-
-  // clearItems = this.cartService.clearCart();
-  shipping: any;
-
+  items!: Observable<Product[]>;
   constructor(private route: ActivatedRoute, private cartService: CartService) {
-    console.log("sssss", cartService.items.value);
+    // console.log("sssss", cartService.items.value);
   }
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
     window.alert("This product has been added to the cart");
   }
+
+  // getCountItems(product: Product): number {
+  //   this.items.subscribe();
+  // }
+
   removeItems(productToRemove: Product) {
     this.cartService.removeItems(productToRemove);
   }

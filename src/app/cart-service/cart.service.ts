@@ -8,13 +8,14 @@ import { BehaviorSubject, Observable, filter } from "rxjs";
   providedIn: "root",
 })
 export class CartService {
-  items: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(products);
+  //items: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(products);
+  items: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
   constructor(private http: HttpClient) {}
 
   addToCart(product: Product): void {
-    const newData = [...this.items.value];
-    this.items.next(newData);
+    const currentData = [...this.items.getValue(), product];
+    this.items.next(currentData);
   }
 
   getItems(): Observable<Product[]> {
@@ -33,7 +34,7 @@ export class CartService {
     this.items.next([]);
   }
 
-  getShippingPrices() {
+  getShippingItems() {
     return this.http.get<{ id: number; name: string; price: number }[]>(
       "/assets/shipping.json"
     );
