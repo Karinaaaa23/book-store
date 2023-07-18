@@ -29,8 +29,19 @@ export class CartService {
   }
 
   addToCart(product: Product): void {
-    const currentData = [...this.items.getValue(), product];
-    this.items.next(currentData);
+    // const currentData = [...this.items.getValue(), product];
+    // this.items.next(currentData);
+
+    const existingProduct = this.items.value.find(
+      (item) => item.id === product.id
+    );
+
+    if (existingProduct) {
+      existingProduct.amount += 1;
+    } else {
+      product.amount = 1;
+      this.items.next([...this.items.value, product]);
+    }
     this.saveItems();
   }
 

@@ -5,7 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Product_details } from "../product-details.service";
 import { Product, products } from "../products";
 import { BehaviorSubject, Observable } from "rxjs";
-
+import { MatSelectModule } from "@angular/material/select";
 @Component({
   selector: "app-cart",
   templateUrl: "./cart.html",
@@ -14,6 +14,8 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class CartComponent implements OnInit {
   product: Product | undefined;
   items!: Observable<Product[]>;
+  total = 0;
+
   constructor(private route: ActivatedRoute, private cartService: CartService) {
     // console.log("sssss", cartService.items.value);
   }
@@ -23,12 +25,17 @@ export class CartComponent implements OnInit {
     window.alert("This product has been added to the cart");
   }
 
-  // getCountItems(product: Product): number {
-  //   this.items.subscribe();
-  // }
-
   removeItems(productToRemove: Product) {
     this.cartService.removeItems(productToRemove);
+  }
+
+  getTotalSum(): void {
+    this.cartService.getItems().subscribe((items) => {
+      this.total = items.reduce(
+        (sum, item) => sum + item.price * item.amount,
+        0
+      );
+    });
   }
 
   ngOnInit(): void {
@@ -38,5 +45,7 @@ export class CartComponent implements OnInit {
     this.route.data.subscribe((data) => {
       const productDetails: Product_details = data["Product_details"];
     });
+
+    this.getTotalSum();
   }
 }

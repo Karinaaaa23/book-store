@@ -17,16 +17,20 @@
           <div class="product-container">
             <div class="product-details">
               <h4 class="book-name">{{ item.name }}</h4>
-              <div class="book-price">Price: {{ item.price | currency }}</div>
+              <div class="book-price">Price: {{item.price}}</div>
             </div>
             <div class="product-actions">
-              <mat-paginator
-                [pageSize]="200"
-                [pageSizeOptions]="[1, 2, 3, 4, 5, 6, 7, 8, 9...]"
-                aria-label="Qty "
-              >
-              </mat-paginator>
-
+              <mat-form-field>
+                <mat-label>Choose quantity</mat-label>
+                <!-- <mat-select [selectChange]="addToCart(item, $event.value)"> -->
+                <mat-select>
+                  <mat-option value="1">1</mat-option>
+                  <mat-option value="2">2</mat-option>
+                  <mat-option value="3">3</mat-option>
+                  <mat-option value="4">4</mat-option>
+                  <mat-option value="5">5</mat-option>
+                </mat-select>
+              </mat-form-field>
               <button class="product-remove" (click)="removeItems(item)">
                 Delete
               </button>
@@ -36,13 +40,18 @@
       </section>
     </div>
   </div>
-
-  <button
-    class="button-purches"
-    mat-raised-button
-    type="submit"
-    routerLink="/shipping"
-  >
-    Order
-  </button>
+  <div class="cart-summary">
+    <span class="summary-group">
+      <span class="summary-title">Total sum: {{total | currency}}</span>
+      <span class="summary-price"></span>
+    </span>
+    <button
+      class="button-purches"
+      mat-raised-button
+      type="submit"
+      routerLink="/shipping"
+    >
+      Order
+    </button>
+  </div>
 </main>

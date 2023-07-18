@@ -7,6 +7,7 @@ export interface Product {
   description: string;
   year: number;
   format: string;
+  amount: number;
 }
 
 export const products = [
@@ -20,6 +21,7 @@ export const products = [
     price: 12,
     year: 2020,
     format: "paper-based",
+    amount: 1,
   },
   {
     id: 2,
@@ -31,6 +33,7 @@ export const products = [
     description: "For A2 level English",
     year: 2012,
     format: "paper-based",
+    amount: 1,
   },
   {
     id: 3,
@@ -42,6 +45,7 @@ export const products = [
     description: "For UI/UX designers",
     year: 2021,
     format: "paper-based",
+    amount: 1,
   },
   {
     id: 4,
@@ -53,6 +57,7 @@ export const products = [
     price: 17,
     year: 2020,
     format: "paper-based",
+    amount: 1,
   },
   {
     id: 5,
@@ -64,6 +69,7 @@ export const products = [
     description: "For A2 level English",
     year: 2012,
     format: "paper-based",
+    amount: 1,
   },
   {
     id: 6,
@@ -75,5 +81,6 @@ export const products = [
     description: "For UI/UX designers",
     year: 2021,
     format: "paper-based",
+    amount: 1,
   },
 ];

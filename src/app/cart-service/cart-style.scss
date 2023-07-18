@@ -73,8 +73,20 @@ img {
   }
 
   .product-actions {
+    mat-form-field {
+      padding: 10px;
+    }
     .product-remove {
       margin: 5px;
     }
   }
+}
+
+.cart-summary {
+  padding: 20px;
+  justify-content: space-between;
+  background-color: #eddeea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
