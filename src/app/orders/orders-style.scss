@@ -1,0 +1,37 @@
+$main-bgcolor: white;
+
+.add-line {
+  width: 40%;
+}
+h2 {
+  padding: 1%;
+  text-align: center;
+  color: #cb65bb;
+}
+.personal-details,
+.delivery-methods,
+.payment-method {
+  background-color: $main-bgcolor;
+  margin: 1%;
+  padding: 1%;
+  width: 60%;
+
+  .personal-details-form,
+  .delivery-methods-form {
+    display: flex;
+    grid-template-columns: 1fr, 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 200px;
+
+    .name-group {
+      //   display: grid;
+      box-sizing: border-box;
+    }
+
+    .order-form {
+      //   display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+}

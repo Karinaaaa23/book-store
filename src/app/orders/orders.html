@@ -1,0 +1,83 @@
+<h2>Checkout</h2>
+
+<mat-sidenav-container
+  ><div class="checkout-main">
+    <section class="personal-details">
+      <h4>Personal information</h4>
+      <div class="personal-details-form">
+        <div class="name-group">
+          <label for="name"
+            >Name
+            <sup>*</sup>
+          </label>
+
+          <form class="order-form">
+            <mat-form-field class="client-first-name">
+              <input matInput placeholder="First name" />
+            </mat-form-field>
+          </form>
+        </div>
+
+        <div class="last-name-group">
+          <label for="lastName"
+            >Last Name
+            <sup>*</sup>
+          </label>
+
+          <form class="order-form">
+            <mat-form-field class="client-last-name">
+              <input matInput placeholder="Last name" />
+            </mat-form-field>
+          </form>
+        </div>
+
+        <div class="phone-number">
+          <label for="phone-num">Mobile number <sup>*</sup></label>
+          <form class="number-form">
+            <mat-form-field class="client-phone-num">
+              <input matInput placeholder="+380" />
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery-methods">
+      <h4 class="delivery-methods-title">Delivery</h4>
+      <div class="delivery-methods-form">
+        <form class="delivery-city">
+          <mat-form-field>
+            <mat-label>City <sup>*</sup></mat-label>
+            <mat-select>
+              <mat-option value="Kyiv">Kyiv</mat-option>
+              <mat-option value="Vinnytsia">Vinnytsia</mat-option>
+              <mat-option value="Odesa">Odesa</mat-option>
+              <mat-option value="Lviv">Lviv</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+
+        <form class="delivery-method">
+          <mat-form-field>
+            <mat-label>Delivery method</mat-label>
+            <mat-select>
+              <mat-option value="Post">Post</mat-option>
+              <mat-option value="Express">Express delivery</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+    </section>
+
+    <section class="payment-method">
+      <h4>Method of payment</h4>
+      <mat-radio-group aria-label="Select a payment method">
+        <mat-radio-button value="online">Online</mat-radio-button>
+        <mat-radio-button value="receipt">Upon receipt</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </div>
+</mat-sidenav-container>
+<mat-sidenav #sidenav mode="side" opened position="end"
+  ><app-cart></app-cart>
+</mat-sidenav>

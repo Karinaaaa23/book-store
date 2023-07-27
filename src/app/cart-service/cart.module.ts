@@ -1,7 +1,6 @@
 import { InjectionToken, NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CartComponent } from "./cart.component";
-import { CartService } from "./cart.service";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSelectModule, MAT_SELECT_TRIGGER } from "@angular/material/select";
 

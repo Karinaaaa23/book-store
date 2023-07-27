@@ -38,7 +38,7 @@ const routes: Routes = [
   {
     path: "shipping",
     loadChildren: () =>
-      import("./shipping/shipping.module").then((m) => m.ShippingModule),
+      import("./order/shipping.module").then((m) => m.ShippingModule),
   },
 
   {

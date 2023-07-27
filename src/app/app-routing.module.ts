@@ -29,16 +29,11 @@ const routes: Routes = [
         (m) => m.ProductDetailsModule
       ),
   },
-  {
-    path: "cart",
-    // loadChildren: ()=> import ('./cart-service/cart-service.module').then(m => m.CartModule)
-    component: CartComponent,
-  },
-  {
-    path: "shipping",
-    loadChildren: () =>
-      import("./shipping/shipping.module").then((m) => m.ShippingModule),
-  },
+  // {
+  //   path: "cart",
+  //   // loadChildren: ()=> import ('./cart-service/cart-service.module').then(m => m.CartModule)
+  //   component: CartComponent,
+  // },
 
   {
     path: "orders",

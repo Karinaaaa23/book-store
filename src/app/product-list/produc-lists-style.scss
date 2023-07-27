@@ -15,7 +15,6 @@ h2 {
   margin: 10px;
   box-sizing: border-box;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  // pointer-events: none;
 }
 
 img {
@@ -34,7 +33,6 @@ img {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   transition: all 1s;
-  // pointer-events: none;
   &::before,
   &::after {
     pointer-events: none;

@@ -2,8 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { OrdersComponent } from "./orders.component";
 
-let routes: Routes;
-routes = [
+const routes: Routes = [
   {
     path: "",
     component: OrdersComponent,
@@ -14,4 +13,6 @@ routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class OrdersRoutingModule {}
+export class OrdersRoutingModule {
+  constructor() {}
+}

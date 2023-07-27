@@ -5,7 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Product_details } from "../product-details.service";
 import { Product, products } from "../products";
 import { BehaviorSubject, Observable } from "rxjs";
-import { MatSelectModule } from "@angular/material/select";
+import { MatSelectChange, MatSelectModule } from "@angular/material/select";
 @Component({
   selector: "app-cart",
   templateUrl: "./cart.html",
@@ -20,8 +20,9 @@ export class CartComponent implements OnInit {
     // console.log("sssss", cartService.items.value);
   }
 
-  addToCart(product: Product) {
+  addToCart(product: Product, amount: number): void {
     this.cartService.addToCart(product);
+
     window.alert("This product has been added to the cart");
   }
 
@@ -45,7 +46,10 @@ export class CartComponent implements OnInit {
     this.route.data.subscribe((data) => {
       const productDetails: Product_details = data["Product_details"];
     });
-
     this.getTotalSum();
+
+    // setInterval(() => {
+    //   this.cartService.clearCartCache();
+    // }, 24 * 60);
   }
 }

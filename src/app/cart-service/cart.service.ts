@@ -3,8 +3,6 @@ import { Product, products } from "../products";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, filter } from "rxjs";
 
-// import {products} from "../products";
-
 @Injectable({
   providedIn: "root",
 })
@@ -40,7 +38,7 @@ export class CartService {
       existingProduct.amount += 1;
     } else {
       product.amount = 1;
-      this.items.next([...this.items.value, product]);
+      this.items.next([product]);
     }
     this.saveItems();
   }
@@ -57,10 +55,11 @@ export class CartService {
     this.saveItems();
   }
 
-  clearCart(): void {
-    console.log("clearCart");
-    this.items.next([]);
-  }
+  // clearCartCache(): void {
+  //   //   console.log("clearCart");
+  //   //   this.items.next([]);
+  //   localStorage.removeItem("cart");
+  // }
 
   getShippingItems() {
     return this.http.get<{ id: number; name: string; price: number }[]>(
