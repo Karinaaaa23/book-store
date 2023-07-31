@@ -17,13 +17,12 @@
           <div class="product-container">
             <div class="product-details">
               <h4 class="book-name">{{ item.name }}</h4>
-              <div class="book-price">Price: {{item.price}}</div>
+              <div class="book-price">Price: {{item.price | currency}}</div>
             </div>
             <div class="product-actions">
               <mat-form-field>
                 <mat-label>Choose quantity</mat-label>
                 <mat-select (selectionChange)="addToCart(item, $event.value)">
-                  <!-- <mat-select> -->
                   <mat-option [value]="1">1</mat-option>
                   <mat-option [value]="2">2</mat-option>
                   <mat-option [value]="3">3</mat-option>
@@ -43,7 +42,7 @@
   <div class="cart-summary">
     <span class="summary-group">
       <span class="summary-title">Subtotal: {{total | currency}}</span>
-      <span class="summary-price"></span>
+      <span class="summary-count">Items: {{cartItems}}</span>
     </span>
     <button
       class="button-purches"

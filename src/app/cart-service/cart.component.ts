@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { CartService } from "./cart.service";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
@@ -8,17 +8,20 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { MatSelectChange, MatSelectModule } from "@angular/material/select";
 @Component({
   selector: "app-cart",
-  templateUrl: "./cart.html",
+  templateUrl: "./cart.service.html",
   styleUrls: ["./cart-style.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent implements OnInit {
   product: Product | undefined;
   items!: Observable<Product[]>;
   total = 0;
+  cartItems = 0;
 
-  constructor(private route: ActivatedRoute, private cartService: CartService) {
-    // console.log("sssss", cartService.items.value);
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private cartService: CartService
+  ) {}
 
   addToCart(product: Product, amount: number): void {
     this.cartService.addToCart(product);
@@ -30,15 +33,9 @@ export class CartComponent implements OnInit {
     this.cartService.removeItems(productToRemove);
   }
 
-  getTotalSum(): void {
-    this.cartService.getItems().subscribe((items) => {
-      this.total = items.reduce(
-        (sum, item) => sum + item.price * item.amount,
-        0
-      );
-    });
+  getTotalSumCart() {
+    return this.cartService.getTotalSum();
   }
-
   ngOnInit(): void {
     this.items = this.cartService.items.asObservable();
     const routeParams = this.route.snapshot.paramMap;
@@ -46,10 +43,15 @@ export class CartComponent implements OnInit {
     this.route.data.subscribe((data) => {
       const productDetails: Product_details = data["Product_details"];
     });
-    this.getTotalSum();
 
-    // setInterval(() => {
-    //   this.cartService.clearCartCache();
-    // }, 24 * 60);
+    this.cartService.getTotalSum().subscribe((total) => {
+      this.total = total;
+    });
+
+    //this.cartItems = this.cartService.getTotalNumOfItems();
+
+    this.cartService.getTotalNumOfItems().subscribe((cartItems) => {
+      this.cartItems = cartItems;
+    });
   }
 }

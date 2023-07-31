@@ -1,6 +1,6 @@
 <h2>Checkout</h2>
 
-<mat-sidenav-container
+<mat-sidenav-container class="order-page"
   ><div class="checkout-main">
     <section class="personal-details">
       <h4>Personal information</h4>
@@ -76,8 +76,20 @@
         <mat-radio-button value="receipt">Upon receipt</mat-radio-button>
       </mat-radio-group>
     </section>
+
+    <section class="delivery-comment">
+      <h4>Comments</h4>
+      <mat-form-field class="delivery-comment-input">
+        <textarea matInput placeholder="Add smth to your order"></textarea>
+      </mat-form-field>
+    </section>
   </div>
 </mat-sidenav-container>
-<mat-sidenav #sidenav mode="side" opened position="end"
+
+<mat-sidenav #sidenav mode="side" opened position="end" class="order-page-add"
   ><app-cart></app-cart>
+  <div class="order-checkout">
+    <!-- <h4></h4> -->
+    <!-- <button class="order-submit"></button> -->
+  </div>
 </mat-sidenav>

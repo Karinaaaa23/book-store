@@ -3,15 +3,10 @@ import { RouterModule, Routes } from "@angular/router";
 import { CartComponent } from "./cart.component";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSelectModule, MAT_SELECT_TRIGGER } from "@angular/material/select";
+import { CartServiceRoutes } from "./cart.service.routing";
 
-const routes: Routes = [
-  {
-    path: "",
-    component: CartComponent,
-  },
-];
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule, MatSelectModule, MatSelectModule],
+  imports: [CartServiceRoutes],
+  exports: [CartServiceRoutes, MatSelectModule, MatSelectModule],
 })
-export class CartRoutingModule {}
+export class CartServiceModule {}

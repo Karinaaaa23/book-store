@@ -5,12 +5,18 @@ $main-bgcolor: white;
 }
 h2 {
   padding: 1%;
-  text-align: center;
+  text-align: left;
   color: #cb65bb;
 }
+
+span {
+  display: block;
+}
+
 .personal-details,
 .delivery-methods,
-.payment-method {
+.payment-method,
+.delivery-comment {
   background-color: $main-bgcolor;
   margin: 1%;
   padding: 1%;
@@ -33,5 +39,9 @@ h2 {
       flex-direction: row;
       justify-content: flex-start;
     }
+  }
+
+  .delivery-comment-input {
+    width: 100%;
   }
 }
