@@ -1,4 +1,4 @@
-import { InjectionToken, NgModule } from "@angular/core";
+import { ChangeDetectorRef, InjectionToken, NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CartComponent } from "./cart.component";
 import { MatPaginatorModule } from "@angular/material/paginator";

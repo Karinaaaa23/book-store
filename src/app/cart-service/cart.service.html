@@ -22,13 +22,23 @@
             <div class="product-actions">
               <mat-form-field>
                 <mat-label>Choose quantity</mat-label>
-                <mat-select (selectionChange)="addToCart(item, $event.value)">
+                <mat-select
+                  (selectionChange)="numOfItems($event.value, item)"
+                  [value]="item.amount"
+                >
+                  <mat-option
+                    *ngFor="let number of numbersOfItems"
+                    [value]="number"
+                    >{{ number }}</mat-option
+                  >
+                </mat-select>
+                <!-- <mat-select (selectionChange)="addToCart(item, $event.value)">
                   <mat-option [value]="1">1</mat-option>
                   <mat-option [value]="2">2</mat-option>
                   <mat-option [value]="3">3</mat-option>
                   <mat-option [value]="4">4</mat-option>
                   <mat-option [value]="5">5</mat-option>
-                </mat-select>
+                </mat-select> -->
               </mat-form-field>
               <button class="product-remove" (click)="removeItems(item)">
                 Delete
@@ -41,7 +51,9 @@
   </div>
   <div class="cart-summary">
     <span class="summary-group">
-      <span class="summary-title">Subtotal: {{total | currency}}</span>
+      <span class="summary-title"
+        >Subtotal: {{totalAmount | async | currency}}</span
+      >
       <span class="summary-count">Items: {{cartItems}}</span>
     </span>
     <button

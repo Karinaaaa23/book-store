@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Product, products } from "../products";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, filter } from "rxjs";
-import { count, map } from "rxjs/operators";
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root",
@@ -11,13 +11,15 @@ export class CartService {
   getTotalSumCart() {
     throw new Error("Method not implemented.");
   }
-  //items: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(products);
+  // private selectedProduct: BehaviorSubject<Product | undefined> =
+  //   new BehaviorSubject<Product | undefined>(undefined);
+
   items: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
-  // selectedQuantity: BehaviorSubject<number> = new BehaviorSubject<number>(1);
   total = 0;
 
   constructor(private http: HttpClient) {
     const serializedItems = localStorage.getItem("cart");
+
     if (!serializedItems) {
       console.warn("No cart");
       return;
@@ -53,6 +55,23 @@ export class CartService {
     this.saveItems();
     this.getTotalSum();
     this.getTotalNumOfItems();
+    // this.updateSelectedProduct(product);
+    // this.changeDetectorRef.detectChanges();
+  }
+
+  updateCartItem(product: Product, quantity: number): void {
+    const cartItems = this.items.value;
+
+    const existingProduct = cartItems.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      existingProduct.amount = quantity;
+    }
+
+    this.items.next(cartItems);
+    this.saveItems();
+    this.getTotalSum();
+    this.getTotalNumOfItems();
   }
 
   removeItems(itemToRemove: Product): void {
@@ -84,6 +103,7 @@ export class CartService {
   clearCartCache(): void {
     console.log("clearCart");
     this.items.next([]);
+    this.saveItems();
   }
 
   getShippingItems() {
