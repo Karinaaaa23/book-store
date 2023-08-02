@@ -13,6 +13,14 @@ span {
   display: block;
 }
 
+.order-page {
+  width: 70%;
+}
+
+.order-page-add {
+  width: 30%;
+}
+
 .personal-details,
 .delivery-methods,
 .payment-method,
@@ -30,12 +38,10 @@ span {
     grid-row-gap: 200px;
 
     .name-group {
-      //   display: grid;
       box-sizing: border-box;
     }
 
     .order-form {
-      //   display: flex;
       flex-direction: row;
       justify-content: flex-start;
     }

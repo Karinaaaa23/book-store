@@ -11,8 +11,6 @@ export class CartService {
   getTotalSumCart() {
     throw new Error("Method not implemented.");
   }
-  // private selectedProduct: BehaviorSubject<Product | undefined> =
-  //   new BehaviorSubject<Product | undefined>(undefined);
 
   items: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
   total = 0;
@@ -55,8 +53,6 @@ export class CartService {
     this.saveItems();
     this.getTotalSum();
     this.getTotalNumOfItems();
-    // this.updateSelectedProduct(product);
-    // this.changeDetectorRef.detectChanges();
   }
 
   updateCartItem(product: Product, quantity: number): void {

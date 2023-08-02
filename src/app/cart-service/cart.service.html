@@ -32,13 +32,6 @@
                     >{{ number }}</mat-option
                   >
                 </mat-select>
-                <!-- <mat-select (selectionChange)="addToCart(item, $event.value)">
-                  <mat-option [value]="1">1</mat-option>
-                  <mat-option [value]="2">2</mat-option>
-                  <mat-option [value]="3">3</mat-option>
-                  <mat-option [value]="4">4</mat-option>
-                  <mat-option [value]="5">5</mat-option>
-                </mat-select> -->
               </mat-form-field>
               <button class="product-remove" (click)="removeItems(item)">
                 Delete
@@ -54,7 +47,7 @@
       <span class="summary-title"
         >Subtotal: {{totalAmount | async | currency}}</span
       >
-      <span class="summary-count">Items: {{cartItems}}</span>
+      <span class="summary-count">Items: {{totalCartItems | async}}</span>
     </span>
     <button
       class="button-purches"
